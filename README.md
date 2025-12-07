@@ -487,7 +487,7 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) file for
 
 ## 👥 Authors
 
-- **Your Name** - *Initial work* - [@yourusername](https://github.com/yourusername)
+- **Your Name** - *Initial work* - Prateek-Pulastya(https://github.com/Prateek-Pulastya)
 
 See also the list of [contributors](https://github.com/yourusername/threat-detection-ai/contributors).
 
@@ -503,9 +503,10 @@ See also the list of [contributors](https://github.com/yourusername/threat-detec
 
 ## 📧 Contact
 
-- **Email:** your.email@example.com
-- **LinkedIn:** [Your Profile](https://linkedin.com/in/yourprofile)
-- **Website:** https://yourwebsite.com
+- **Email:** prateekpulastya220@gmail.com
+- **LinkedIn:** [Your Profile]([https://linkedin.com/in/yourprofile)](https://www.linkedin.com/in/prateek-pulastya22/)
+- **Website:** https://prateek-pulastya-n1k3w3r.gamma.site/
+- **Medium:** https://medium.com/@prateekpulastya
 
 ---
 
