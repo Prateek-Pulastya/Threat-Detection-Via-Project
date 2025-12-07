@@ -358,36 +358,6 @@ python src/dashboard.py --port 5000 --model models/threat_detector.pkl
 
 ---
 
-## 🐳 Docker Deployment
-
-```bash
-# Build image
-docker build -t threat-detector .
-
-# Run container
-docker run -p 5000:5000 -v $(pwd)/data:/app/data threat-detector
-
-# Using docker-compose
-docker-compose up -d
-```
-
----
-
-## ☸️ Kubernetes Deployment
-
-```bash
-# Apply configurations
-kubectl apply -f deployment/kubernetes/
-
-# Check status
-kubectl get pods
-kubectl get services
-
-# Access dashboard
-kubectl port-forward service/threat-detector 5000:80
-```
-
----
 
 ## 📊 Monitoring & Observability
 
@@ -429,9 +399,6 @@ pytest tests/integration/
 
 ---
 
-## 🤝 Contributing
-
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 **Development Setup:**
 ```bash
@@ -452,20 +419,10 @@ pylint src/
 
 ---
 
-## 📖 Documentation
-
-- **User Guide:** [docs/USER_GUIDE.md](docs/USER_GUIDE.md)
-- **API Reference:** [docs/API.md](docs/API.md)
-- **Deployment Guide:** [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)
-- **Architecture:** [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
-
----
-
 ## 🔗 Related Resources
 
 ### GitHub Repositories
 - [CICIDS2017 Official](https://github.com/ahlashkari/CICFlowMeter)
-- [SHAP Library](https://github.com/slundberg/shap)
 - [Network Security ML](https://github.com/bharathraj-v/ML-Network-Traffic-Analyzer)
 
 ### Research Papers
