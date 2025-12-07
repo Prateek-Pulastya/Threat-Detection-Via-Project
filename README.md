@@ -167,7 +167,7 @@ Friday-WorkingHours.pcap_ISCX.csv         - DDoS + Port Scan + Botnet
 
 ## 💡 Explainability Features
 
-### SHAP (SHapley Additive exPlanations)
+### SHAP (Shapley Additive exPlanations)
 
 Our system uses SHAP to provide transparent explanations for every threat detection:
 
@@ -487,7 +487,7 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) file for
 
 ## 👥 Authors
 
-- **Your Name** - *Initial work* - Prateek-Pulastya(https://github.com/Prateek-Pulastya)
+- *Initial work* - Prateek-Pulastya(https://github.com/Prateek-Pulastya)
 
 See also the list of [contributors](https://github.com/yourusername/threat-detection-ai/contributors).
 
@@ -504,16 +504,8 @@ See also the list of [contributors](https://github.com/yourusername/threat-detec
 ## 📧 Contact
 
 - **Email:** prateekpulastya220@gmail.com
-- **LinkedIn:** [Your Profile]([https://linkedin.com/in/yourprofile)](https://www.linkedin.com/in/prateek-pulastya22/)
+- **LinkedIn:** https://www.linkedin.com/in/prateek-pulastya22/
 - **Website:** https://prateek-pulastya-n1k3w3r.gamma.site/
 - **Medium:** https://medium.com/@prateekpulastya
 
 ---
-
-## 🌟 Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/threat-detection-ai&type=Date)](https://star-history.com/#yourusername/threat-detection-ai&Date)
-
----
-
-**Made with ❤️ for the cybersecurity community**
