@@ -99,11 +99,11 @@ Friday-WorkingHours.pcap_ISCX.csv         - DDoS + Port Scan + Botnet
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                     Data Ingestion Layer                     │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐   │
-│  │  Wireshark│  │  Splunk  │  │  Syslog  │  │  NetFlow │   │
-│  └─────┬────┘  └─────┬────┘  └─────┬────┘  └─────┬────┘   │
-└────────┼─────────────┼─────────────┼─────────────┼─────────┘
+│                     Data Ingestion Layer                    │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐     │
+│  │ Wireshark│  │  Splunk  │  │  Syslog  │  │  NetFlow │     │
+│  └─────┬────┘  └─────┬────┘  └─────┬────┘  └─────┬────┘     │
+└────────┼─────────────┼─────────────┼─────────────┼──────────┘
          │             │             │             │
          └─────────────┴─────────────┴─────────────┘
                            │
@@ -167,7 +167,7 @@ Friday-WorkingHours.pcap_ISCX.csv         - DDoS + Port Scan + Botnet
 
 ## 💡 Explainability Features
 
-### SHAP (SHapley Additive exPlanations)
+### SHAP (Shapley Additive exPlanations)
 
 Our system uses SHAP to provide transparent explanations for every threat detection:
 
@@ -213,23 +213,9 @@ threat-detection-ai/
 │   └── explain.py               # XAI utilities
 ├── templates/
 │   └── dashboard.html           # Web UI template
-├── notebooks/
-│   ├── 01_data_exploration.ipynb
-│   ├── 02_model_training.ipynb
-│   └── 03_explainability.ipynb
 ├── tests/
 │   ├── test_detector.py
 │   └── test_preprocessing.py
-├── docker/
-│   ├── Dockerfile
-│   └── docker-compose.yml
-├── deployment/
-│   ├── kubernetes/
-│   └── terraform/
-├── docs/
-│   ├── API.md
-│   ├── DEPLOYMENT.md
-│   └── USER_GUIDE.md
 ├── requirements.txt
 ├── setup.py
 ├── .gitignore
@@ -238,77 +224,6 @@ threat-detection-ai/
 
 ---
 
-## 🔌 API Documentation
-
-### REST API Endpoints
-
-#### 1. Single Prediction
-
-```bash
-POST /api/predict
-Content-Type: application/json
-
-{
-  "features": {
-    "Destination Port": 80,
-    "Flow Duration": 120000,
-    "Total Fwd Packets": 8,
-    "Flow Bytes/s": 7500,
-    ...
-  }
-}
-
-Response:
-{
-  "prediction": "DDoS",
-  "is_threat": true,
-  "confidence": 0.973,
-  "threat_level": "CRITICAL",
-  "top_features": [...]
-}
-```
-
-#### 2. Batch Prediction
-
-```bash
-POST /api/batch_predict
-Content-Type: application/json
-
-{
-  "data": [
-    {"Destination Port": 80, ...},
-    {"Destination Port": 443, ...}
-  ]
-}
-
-Response:
-{
-  "total_flows": 100,
-  "threats_detected": 23,
-  "threat_percentage": 23.0,
-  "results": [...]
-}
-```
-
-#### 3. Model Explanation
-
-```bash
-POST /api/explain/<sample_id>
-Content-Type: application/json
-
-{
-  "features": {...}
-}
-
-Response:
-{
-  "sample_id": 123,
-  "prediction": "DDoS",
-  "explanation": "This traffic was classified as 'DDoS' based on..."
-}
-```
-
----
 
 ## 🎓 Usage Examples
 
@@ -358,36 +273,6 @@ python src/dashboard.py --port 5000 --model models/threat_detector.pkl
 
 ---
 
-## 🐳 Docker Deployment
-
-```bash
-# Build image
-docker build -t threat-detector .
-
-# Run container
-docker run -p 5000:5000 -v $(pwd)/data:/app/data threat-detector
-
-# Using docker-compose
-docker-compose up -d
-```
-
----
-
-## ☸️ Kubernetes Deployment
-
-```bash
-# Apply configurations
-kubectl apply -f deployment/kubernetes/
-
-# Check status
-kubectl get pods
-kubectl get services
-
-# Access dashboard
-kubectl port-forward service/threat-detector 5000:80
-```
-
----
 
 ## 📊 Monitoring & Observability
 
@@ -429,9 +314,6 @@ pytest tests/integration/
 
 ---
 
-## 🤝 Contributing
-
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 **Development Setup:**
 ```bash
@@ -452,20 +334,10 @@ pylint src/
 
 ---
 
-## 📖 Documentation
-
-- **User Guide:** [docs/USER_GUIDE.md](docs/USER_GUIDE.md)
-- **API Reference:** [docs/API.md](docs/API.md)
-- **Deployment Guide:** [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)
-- **Architecture:** [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
-
----
-
 ## 🔗 Related Resources
 
 ### GitHub Repositories
 - [CICIDS2017 Official](https://github.com/ahlashkari/CICFlowMeter)
-- [SHAP Library](https://github.com/slundberg/shap)
 - [Network Security ML](https://github.com/bharathraj-v/ML-Network-Traffic-Analyzer)
 
 ### Research Papers
@@ -487,7 +359,7 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) file for
 
 ## 👥 Authors
 
-- **Your Name** - *Initial work* - [@yourusername](https://github.com/yourusername)
+- *Initial work* - Prateek-Pulastya(https://github.com/Prateek-Pulastya)
 
 See also the list of [contributors](https://github.com/yourusername/threat-detection-ai/contributors).
 
@@ -503,16 +375,9 @@ See also the list of [contributors](https://github.com/yourusername/threat-detec
 
 ## 📧 Contact
 
-- **Email:** your.email@example.com
-- **LinkedIn:** [Your Profile](https://linkedin.com/in/yourprofile)
-- **Website:** https://yourwebsite.com
+- **Email:** prateekpulastya220@gmail.com
+- **LinkedIn:** https://www.linkedin.com/in/prateek-pulastya22/
+- **Website:** https://prateek-pulastya-n1k3w3r.gamma.site/
+- **Medium:** https://medium.com/@prateekpulastya
 
 ---
-
-## 🌟 Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/threat-detection-ai&type=Date)](https://star-history.com/#yourusername/threat-detection-ai&Date)
-
----
-
-**Made with ❤️ for the cybersecurity community**
